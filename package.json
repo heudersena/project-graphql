@@ -1,0 +1,41 @@
+{
+  "name": "hsena-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-datasource": "^0.9.0",
+    "apollo-datasource-rest": "^0.13.0",
+    "apollo-server": "2.23.0",
+    "apollo-server-caching": "^0.7.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dataloader": "^2.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "graphql": "15.5.0",
+    "json-server": "^0.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.6",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
+    "rimraf": "^3.0.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "faker": "^6.6.6",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.1",
+    "sucrase": "^3.20.3"
+  },
+  "scripts": {
+    "dev": "nodemon  -r dotenv/config ./src/index.js",
+    "start": "node  -r dotenv/config --experimental-modules ./dist/index.js",
+    "clean": "rimraf ./dist",
+    "build": "yarn run clean && sucrase ./src -d ./dist --transforms imports && yarn start"
+  }
+}
